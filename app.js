@@ -3,9 +3,14 @@ const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSRR37cSPX3g8
 fetch(SHEET_URL)
   .then(response => response.text())
   .then(csvText => {
-    console.log("Google Sheet CSV Loaded:");
+
+    // Temporary test
+    document.getElementById("xsell-best-email-cvr").innerText = "TEST";
+    document.getElementById("xsell-best-email-cvr-campaign").innerText = "Connected";
+
     console.log(csvText);
+
   })
   .catch(error => {
-    console.error("Error loading Google Sheet:", error);
+    console.error(error);
   });
