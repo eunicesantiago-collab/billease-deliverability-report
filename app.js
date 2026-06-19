@@ -42,7 +42,35 @@ Papa.parse(SHEET_URL, {
       document.getElementById("xsell-best-email-cvr").innerText = bestEmailCVR["Email CVR"];
       document.getElementById("xsell-best-email-cvr-campaign").innerText = bestEmailCVR["Campaign Name"];
     }
+const bestPushCVR = findBest(rows, "Xsell", "Push CVR");
 
+if (bestPushCVR) {
+  document.getElementById("xsell-best-push-cvr").innerText =
+    bestPushCVR["Push CVR"];
+
+  document.getElementById("xsell-best-push-cvr-campaign").innerText =
+    bestPushCVR["Campaign Name"];
+}
+
+const bestEmailOR = findBest(rows, "Xsell", "Email Open Rate");
+
+if (bestEmailOR) {
+  document.getElementById("xsell-best-email-or").innerText =
+    bestEmailOR["Email Open Rate"];
+
+  document.getElementById("xsell-best-email-or-campaign").innerText =
+    bestEmailOR["Campaign Name"];
+}
+
+const bestPushCTR = findBest(rows, "Xsell", "Push CTR");
+
+if (bestPushCTR) {
+  document.getElementById("xsell-best-push-ctr").innerText =
+    bestPushCTR["Push CTR"];
+
+  document.getElementById("xsell-best-push-ctr-campaign").innerText =
+    bestPushCTR["Campaign Name"];
+}
     console.log("Xsell Best Email CVR:", bestEmailCVR);
   }
 });
